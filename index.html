@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>A.S.T Enterprise | All Services, One Platform</title>
+  <meta name="description" content="A.S.T Enterprise offers trusted home services—cleaning, plumbing, electrical, painting, carpentry and more. Book in minutes." />
+
+  <meta property="og:title" content="A.S.T Enterprise | All Services, One Platform" />
+  <meta property="og:description" content="Trusted home services booking with verified professionals." />
+  <meta property="og:type" content="website" />
+
+  <meta name="theme-color" content="#2874F0" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <div class="brand">
+        <a href="#" class="logo" aria-label="A.S.T Enterprise Home">
+          <span class="logo-mark" aria-hidden="true">✦</span>
+          <span class="logo-text">A.S.T Enterprise</span>
+        </a>
+      </div>
+
+      <form class="search" role="search" aria-label="Search services">
+        <label class="sr-only" for="searchInput">Search services</label>
+        <input id="searchInput" name="q" type="search" placeholder="Search services, e.g., cleaning, plumbing" autocomplete="off" />
+        <button class="search-btn" type="button" id="searchBtn" aria-label="Search">🔎</button>
+      </form>
+
+      <div class="header-actions">
+        <div class="location" role="group" aria-label="Select location">
+          <button class="location-btn" type="button" id="locationBtn" aria-haspopup="dialog" aria-controls="locationDialog">
+            <span class="location-icon" aria-hidden="true">📍</span>
+            <span class="location-text" id="locationText">Bangalore</span>
+            <span class="chev" aria-hidden="true">▾</span>
+          </button>
+        </div>
+
+        <nav class="auth-links" aria-label="Account">
+          <button class="link-btn" type="button" id="loginBtn">Login</button>
+          <button class="link-btn" type="button" id="registerBtn">Register</button>
+          <button class="link-btn" type="button" id="bookingsBtn">My Bookings</button>
+        </nav>
+
+        <div class="profile">
+          <button class="profile-btn" type="button" id="profileBtn" aria-haspopup="menu" aria-expanded="false">
+            <span class="profile-avatar" aria-hidden="true">👤</span>
+            <span class="profile-name">Account</span>
+            <span class="chev" aria-hidden="true">▾</span>
+          </button>
+          <div class="menu" id="profileMenu" role="menu" aria-label="Profile menu">
+            <button class="menu-item" type="button" role="menuitem">Profile</button>
+            <button class="menu-item" type="button" role="menuitem">Saved Addresses</button>
+            <button class="menu-item" type="button" role="menuitem" id="goTrack">Track Booking</button>
+            <div class="menu-divider" role="separator"></div>
+            <button class="menu-item" type="button" role="menuitem">Logout</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="0">
+    <!-- HERO SLIDER -->
+    <section class="hero" aria-label="Promotions">
+      <div class="hero-slider" data-slider>
+        <div class="hero-slides" id="heroSlides" role="region" aria-roledescription="carousel" aria-label="Trusted home services highlights">
+          <article class="hero-slide is-active">
+            <div class="hero-content">
+              <h1>Trusted Home Services</h1>
+              <p>Book verified professionals for cleaning and maintenance—fast, reliable, and affordable.</p>
+              <div class="hero-cta">
+                <button class="primary" type="button" data-jump-to="#categories">Explore Services</button>
+                <button class="secondary" type="button" data-open-quick-book="true">Quick Book</button>
+              </div>
+            </div>
+            <div class="hero-visual" aria-hidden="true">🛠️</div>
+          </article>
+
+          <article class="hero-slide">
+            <div class="hero-content">
+              <h1>Verified Professionals</h1>
+              <p>Curated experts with quality checks and transparent service details.</p>
+              <div class="hero-cta">
+                <button class="primary" type="button" data-jump-to="#popular">Popular Services</button>
+                <button class="secondary" type="button" data-open-quick-book="true">Book Now</button>
+              </div>
+            </div>
+            <div class="hero-visual" aria-hidden="true">✅</div>
+          </article>
+
+          <article class="hero-slide">
+            <div class="hero-content">
+              <h1>Affordable Pricing</h1>
+              <p>Get instant quotations with GST and platform fees calculated automatically.</p>
+              <div class="hero-cta">
+                <button class="primary" type="button" data-jump-to="#how">How it Works</button>
+                <button class="secondary" type="button" data-open-quick-book="true">Get Quote</button>
+              </div>
+            </div>
+            <div class="hero-visual" aria-hidden="true">₹</div>
+          </article>
+
+          <article class="hero-slide">
+            <div class="hero-content">
+              <h1>Same Day Service</h1>
+              <p>Choose a time slot and get your service done when you need it.</p>
+              <div class="hero-cta">
+                <button class="primary" type="button" data-jump-to="#bookings">Book a Service</button>
+                <button class="secondary" type="button" data-open-quick-book="true">Schedule</button>
+              </div>
+            </div>
+            <div class="hero-visual" aria-hidden="true">⏱️</div>
+          </article>
+        </div>
+
+        <div class="hero-controls" aria-label="Carousel controls">
+          <button class="icon-btn" type="button" data-prev aria-label="Previous slide">◀</button>
+          <div class="dots" id="heroDots" aria-label="Slide navigation"></div>
+          <button class="icon-btn" type="button" data-next aria-label="Next slide">▶</button>
+        </div>
+
+        <div class="hero-progress" aria-hidden="true">
+          <span class="hero-progress-bar" data-progress-bar></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST STRIP -->
+    <section class="trust-strip" aria-label="Trust highlights">
+      <div class="trust-inner">
+        <div class="trust-item"><span aria-hidden="true">🛡️</span><strong>Secure Payments</strong></div>
+        <div class="trust-item"><span aria-hidden="true">⚡</span><strong>Quick Service</strong></div>
+        <div class="trust-item"><span aria-hidden="true">🧑‍🔧</span><strong>Verified Pros</strong></div>
+        <div class="trust-item"><span aria-hidden="true">💬</span><strong>Customer Support</strong></div>
+      </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="section" id="categories" aria-label="Service categories">
+      <div class="section-head">
+        <h2>All Services</h2>
+        <p>Choose what you need. We’ll connect you to the right professional.</p>
+      </div>
+
+      <div class="grid categories" id="categoriesGrid" role="list"></div>
+    </section>
+
+    <!-- POPULAR -->
+    <section class="section" id="popular" aria-label="Popular services">
+      <div class="section-head">
+        <h2>Popular Services</h2>
+        <p>Most booked by customers this week.</p>
+      </div>
+
+      <div class="grid popular" id="popularGrid" role="list"></div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="section" id="why" aria-label="Why choose us">
+      <div class="section-head">
+        <h2>Why Choose A.S.T Enterprise</h2>
+        <p>Quality, speed, and transparency—every booking.</p>
+      </div>
+
+      <div class="grid choose" role="list">
+        <div class="card choose-card" role="listitem">
+          <div class="choose-icon" aria-hidden="true">✅</div>
+          <h3>Verified Professionals</h3>
+          <p>Background checks and skill-based screening.</p>
+        </div>
+        <div class="card choose-card" role="listitem">
+          <div class="choose-icon" aria-hidden="true">💸</div>
+          <h3>Affordable Pricing</h3>
+          <p>Transparent costs with instant quotation.</p>
+        </div>
+        <div class="card choose-card" role="listitem">
+          <div class="choose-icon" aria-hidden="true">⚡</div>
+          <h3>Quick Service</h3>
+          <p>Choose your preferred date & time slot.</p>
+        </div>
+        <div class="card choose-card" role="listitem">
+          <div class="choose-icon" aria-hidden="true">🔒</div>
+          <h3>Secure Payments</h3>
+          <p>UPI, cards, wallets, and net banking—mock UI.</p>
+        </div>
+        <div class="card choose-card" role="listitem">
+          <div class="choose-icon" aria-hidden="true">🧾</div>
+          <h3>Easy Booking</h3>
+          <p>One platform for all home services.</p>
+        </div>
+        <div class="card choose-card" role="listitem">
+          <div class="choose-icon" aria-hidden="true">💬</div>
+          <h3>Customer Support</h3>
+          <p>Help whenever you need it—before and after service.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section" id="how" aria-label="How it works">
+      <div class="section-head">
+        <h2>How It Works</h2>
+        <p>A simple 4-step process to get your service done.</p>
+      </div>
+
+      <ol class="timeline" aria-label="Booking timeline">
+        <li class="timeline-step">
+          <div class="step-num" aria-hidden="true">1</div>
+          <div class="step-body">
+            <h3>Select Service</h3>
+            <p>Browse categories or popular services and view details.</p>
+          </div>
+        </li>
+        <li class="timeline-step">
+          <div class="step-num" aria-hidden="true">2</div>
+          <div class="step-body">
+            <h3>Choose Date & Time</h3>
+            <p>Select your slot and add address and instructions.</p>
+          </div>
+        </li>
+        <li class="timeline-step">
+          <div class="step-num" aria-hidden="true">3</div>
+          <div class="step-body">
+            <h3>Confirm Booking</h3>
+            <p>Review quotation, then choose your payment method.</p>
+          </div>
+        </li>
+        <li class="timeline-step">
+          <div class="step-num" aria-hidden="true">4</div>
+          <div class="step-body">
+            <h3>Get Service</h3>
+            <p>Track status and receive service from verified professionals.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- WORKER PROFILE -->
+    <section class="section" id="worker" aria-label="Worker profile">
+      <div class="section-head">
+        <h2>Meet Your Professional</h2>
+        <p>Realistic mock worker details and contact options.</p>
+      </div>
+
+      <div class="worker-wrap">
+        <div class="worker-card" role="region" aria-label="Worker profile">
+          <img class="worker-photo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cdefs%3E%3CradialGradient id='g' cx='30%25' cy='20%25'%3E%3Cstop offset='0%25' stop-color='%232874F0'/%3E%3Cstop offset='100%25' stop-color='%230f3b8a'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='240' height='240' rx='48' fill='url(%23g)'/%3E%3Cpath d='M60 210c18-50 102-50 120 0' fill='%23ffffff' fill-opacity='.22'/%3E%3Ccircle cx='120' cy='102' r='48' fill='%23ffffff' fill-opacity='.25'/%3E%3Ctext x='50%25' y='58%25' dominant-baseline='middle' text-anchor='middle' font-size='64' fill='white' font-family='Arial'%3E%F0%9F%91%A9%3C/text%3E%3C/svg%3E" alt="Worker profile photo" />
+
+          <div class="worker-meta">
+            <h3 id="workerName">Ravi Kumar</h3>
+            <p class="muted">Experience: <strong>6+ years</strong></p>
+            <div class="rating" aria-label="Rating">
+              <span class="stars" aria-hidden="true">★★★★★</span>
+              <span class="rating-value"><strong id="workerRating">4.7</strong> / 5</span>
+            </div>
+            <div class="pill-row" aria-label="Worker stats">
+              <span class="pill">Completed: <strong>240+</strong></span>
+              <span class="pill">On-time: <strong>98%</strong></span>
+            </div>
+
+            <div class="worker-actions">
+              <button class="primary" type="button" id="callWorker">Call</button>
+              <button class="secondary" type="button" id="chatWorker">Chat</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING FORM (View) -->
+    <section class="section" id="bookings" aria-label="Booking form">
+      <div class="section-head">
+        <h2>Book a Service</h2>
+        <p id="bookingSubtitle">Choose your service, add details, and confirm.</p>
+      </div>
+
+      <div class="layout two-col">
+        <div class="card" aria-label="Selected service">
+          <div class="service-summary">
+            <div class="service-summary-top">
+              <div>
+                <h3 id="selectedServiceName">Home Cleaning</h3>
+                <p class="muted" id="selectedServiceDuration">Duration: 2 hours</p>
+              </div>
+              <div class="price-tag" aria-label="Starting price">
+                <div class="price-label">Starting at</div>
+                <div class="price-value" id="selectedServicePrice">₹299</div>
+              </div>
+            </div>
+
+            <p class="muted" id="selectedServiceDesc">Professional cleaning for a fresh home.</p>
+
+            <div class="kv-grid" aria-label="Service features" id="selectedServiceFeatures"></div>
+
+            <div class="hint">
+              <span aria-hidden="true">ℹ️</span>
+              <span>After you submit, we’ll generate a quotation automatically.</span>
+            </div>
+          </div>
+
+          <div class="form-cta" role="group" aria-label="Quick actions">
+            <button class="secondary" type="button" id="changeServiceBtn">Change Service</button>
+            <button class="ghost" type="button" id="viewQuotationBtn" disabled aria-disabled="true">View Quotation</button>
+          </div>
+        </div>
+
+        <form class="card form-card" id="bookingForm" novalidate aria-label="Booking details">
+          <div class="form-grid">
+            <div class="field">
+              <label for="fullName">Full Name <span aria-hidden="true">*</span></label>
+              <input id="fullName" name="fullName" type="text" placeholder="Your name" required minlength="2" />
+              <div class="field-error" aria-live="polite" data-error-for="fullName"></div>
+            </div>
+
+            <div class="field">
+              <label for="mobileNumber">Mobile Number <span aria-hidden="true">*</span></label>
+              <input id="mobileNumber" name="mobileNumber" type="tel" inputmode="numeric" placeholder="10-digit mobile" required pattern="[0-9]{10}" />
+              <div class="field-error" aria-live="polite" data-error-for="mobileNumber"></div>
+            </div>
+
+            <div class="field" style="grid-column: 1 / -1;">
+              <label for="address">Address <span aria-hidden="true">*</span></label>
+              <textarea id="address" name="address" rows="3" placeholder="House no., street, area" required minlength="10"></textarea>
+              <div class="field-error" aria-live="polite" data-error-for="address"></div>
+            </div>
+
+            <div class="field">
+              <label for="serviceType">Service Type</label>
+              <select id="serviceType" name="serviceType">
+                <option value="standard" selected>Standard</option>
+                <option value="premium">Premium</option>
+                <option value="express">Express</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="datePicker">Date <span aria-hidden="true">*</span></label>
+              <input id="datePicker" name="datePicker" type="date" required />
+              <div class="field-error" aria-live="polite" data-error-for="datePicker"></div>
+            </div>
+
+            <div class="field">
+              <label for="timeSlot">Time Slot <span aria-hidden="true">*</span></label>
+              <select id="timeSlot" name="timeSlot" required>
+                <option value="">Select time</option>
+                <option>9:00 AM - 11:00 AM</option>
+                <option>11:00 AM - 1:00 PM</option>
+                <option>1:00 PM - 3:00 PM</option>
+                <option>3:00 PM - 5:00 PM</option>
+                <option>5:00 PM - 7:00 PM</option>
+              </select>
+              <div class="field-error" aria-live="polite" data-error-for="timeSlot"></div>
+            </div>
+
+            <div class="field" style="grid-column: 1 / -1;">
+              <label for="instructions">Additional Instructions</label>
+              <textarea id="instructions" name="instructions" rows="3" placeholder="Any special instructions for the professional?"></textarea>
+            </div>
+
+            <div class="field" style="grid-column: 1 / -1;">
+              <div class="form-actions">
+                <button class="primary" type="submit" id="submitBooking">Continue to Payment</button>
+                <div class="mini-note">By booking, you agree to the Terms & Privacy policy.</div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- PAYMENT VIEW -->
+    <section class="section" id="paymentView" aria-label="Payment options" hidden>
+      <div class="section-head">
+        <h2>Payment</h2>
+        <p>Choose a payment method to proceed (UI mock).</p>
+      </div>
+
+      <div class="layout two-col">
+        <div class="card" aria-label="Quotation summary">
+          <h3>Quotation</h3>
+          <div class="quote-lines" id="quoteLines" aria-live="polite"></div>
+          <div class="quote-total">
+            <span>Total</span>
+            <strong id="quoteTotal">₹0</strong>
+          </div>
+
+          <div class="hint">
+            <span aria-hidden="true">🧮</span>
+            <span>GST and platform fee are calculated automatically.</span>
+          </div>
+
+          <div class="form-cta">
+            <button class="secondary" type="button" id="backToFormBtn">Back</button>
+          </div>
+        </div>
+
+        <div class="card" aria-label="Payment methods">
+          <h3>Select Payment Method</h3>
+          <div class="payment-grid" id="paymentGrid" role="list"></div>
+
+          <div class="field">
+            <button class="primary" type="button" id="payNowBtn">Pay Now</button>
+            <p class="muted small">No real payment gateway is connected. This is a professional UI mock.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONFIRMATION VIEW -->
+    <section class="section" id="confirmationView" aria-label="Booking confirmation" hidden>
+      <div class="section-head">
+        <h2>Booking Confirmed 🎉</h2>
+        <p>Your service is scheduled. Track it in real-time.</p>
+      </div>
+
+      <div class="layout two-col">
+        <div class="card" aria-label="Booking details">
+          <div class="success" aria-hidden="true">✅</div>
+          <h3>Booking Details</h3>
+          <div class="confirmation-grid" id="confirmationGrid"></div>
+
+          <div class="form-cta">
+            <button class="primary" type="button" id="goTrackBtn">Track Booking</button>
+            <button class="secondary" type="button" id="bookAnotherBtn">Book Another Service</button>
+          </div>
+        </div>
+
+        <div class="card" aria-label="Quick actions">
+          <h3>Next Steps</h3>
+          <ul class="checklist">
+            <li><span aria-hidden="true">📅</span> You’ll receive updates on your booking status.</li>
+            <li><span aria-hidden="true">👷</span> A professional will be assigned before arrival.</li>
+            <li><span aria-hidden="true">📍</span> Track ETA and location during service.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRACK VIEW -->
+    <section class="section" id="trackView" aria-label="Track booking" hidden>
+      <div class="section-head">
+        <h2>Track Your Booking</h2>
+        <p>Mock live tracking with dummy worker location and ETA.</p>
+      </div>
+
+      <div class="layout two-col">
+        <div class="card" aria-label="Tracking status">
+          <h3>Booking Status</h3>
+          <div class="status-list" id="statusList" aria-live="polite"></div>
+
+          <div class="eta-box">
+            <div class="eta-row">
+              <span class="muted">ETA</span>
+              <strong id="etaText">--</strong>
+            </div>
+            <div class="eta-row">
+              <span class="muted">Worker Assigned</span>
+              <strong id="assignedWorker">--</strong>
+            </div>
+          </div>
+
+          <div class="form-cta">
+            <button class="secondary" type="button" id="trackRefreshBtn">Refresh</button>
+            <button class="primary" type="button" id="trackBackBtn">Back to Home</button>
+          </div>
+        </div>
+
+        <div class="card" aria-label="Worker location">
+          <h3>Worker Live Location (Mock)</h3>
+          <div class="map" role="img" aria-label="Map mock">
+            <div class="map-grid" aria-hidden="true"></div>
+            <div class="map-marker" id="workerMarker" aria-hidden="true"></div>
+            <div class="map-label" id="workerLocation">Current location updates...</div>
+          </div>
+          <div class="hint">
+            <span aria-hidden="true">📡</span>
+            <span>Location and ETA are simulated for UI demonstration.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS CAROUSEL -->
+    <section class="section" id="reviews" aria-label="Customer reviews">
+      <div class="section-head">
+        <h2>Customer Reviews</h2>
+        <p>What customers say about A.S.T Enterprise.</p>
+      </div>
+
+      <div class="reviews-wrap">
+        <div class="reviews-carousel" id="reviewsCarousel" role="region" aria-roledescription="carousel" aria-label="Customer reviews">
+          <div class="reviews-track" id="reviewsTrack"></div>
+          <button class="icon-btn left" type="button" data-rev-prev aria-label="Previous review">◀</button>
+          <button class="icon-btn right" type="button" data-rev-next aria-label="Next review">▶</button>
+        </div>
+
+        <div class="dots" id="reviewsDots" aria-label="Review navigation"></div>
+      </div>
+    </section>
+
+    <!-- FAQ ACCORDION -->
+    <section class="section" id="faq" aria-label="Frequently asked questions">
+      <div class="section-head">
+        <h2>FAQ</h2>
+        <p>Answers to common questions.</p>
+      </div>
+
+      <div class="accordion" id="faqAccordion" role="region" aria-label="FAQ accordion">
+        <div class="acc-item">
+          <button class="acc-btn" type="button" aria-expanded="true">How do I book a service?</button>
+          <div class="acc-panel" role="region">
+            <p>Select a service card, fill the booking form, view quotation, choose payment, and confirm.</p>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn" type="button" aria-expanded="false">Are workers verified?</button>
+          <div class="acc-panel" role="region" hidden>
+            <p>Yes. A.S.T Enterprise uses a verification process to ensure quality professionals.</p>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn" type="button" aria-expanded="false">What payment methods are accepted?</button>
+          <div class="acc-panel" role="region" hidden>
+            <p>UPI, Google Pay, PhonePe, Paytm, debit/credit cards, and net banking (UI mock).</p>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn" type="button" aria-expanded="false">Can I reschedule?</button>
+          <div class="acc-panel" role="region" hidden>
+            <p>Yes. You can reschedule from your bookings page (demo behavior in UI).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- LOCATION DIALOG -->
+  <div class="modal-backdrop" id="locationDialog" role="dialog" aria-modal="true" aria-labelledby="locationDialogTitle" hidden>
+    <div class="modal" role="document">
+      <div class="modal-head">
+        <h3 id="locationDialogTitle">Select Location</h3>
+        <button class="icon-btn" type="button" id="locationClose" aria-label="Close">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <p class="muted">Choose your city to see available services and pricing.</p>
+        <div class="chip-grid" role="list" aria-label="Location options" id="locationChips"></div>
+      </div>
+
+      <div class="modal-foot">
+        <button class="secondary" type="button" id="locationCancel">Cancel</button>
+        <button class="primary" type="button" id="locationDone">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICE DETAIL MODAL -->
+  <div class="modal-backdrop" id="serviceModal" role="dialog" aria-modal="true" aria-labelledby="serviceModalTitle" hidden>
+    <div class="modal modal-wide" role="document">
+      <div class="modal-head">
+        <h3 id="serviceModalTitle">Service Details</h3>
+        <button class="icon-btn" type="button" id="serviceModalClose" aria-label="Close">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="service-modal">
+          <div class="service-modal-left">
+            <div class="service-media" aria-hidden="true" id="serviceModalImage"></div>
+          </div>
+
+          <div class="service-modal-right">
+            <div class="service-modal-top">
+              <div class="service-badge">Starting from <span id="serviceModalPrice">₹0</span></div>
+              <p class="muted" id="serviceModalDuration">Duration: --</p>
+            </div>
+
+            <p id="serviceModalDesc">Description...</p>
+
+            <h4>Features</h4>
+            <ul class="feature-list" id="serviceModalFeatures"></ul>
+
+            <div class="service-modal-cta">
+              <button class="primary" type="button" id="serviceModalBook">Book Now</button>
+              <button class="secondary" type="button" id="serviceModalCancel">Not now</button>
+            </div>
+
+            <div class="mini-note">This opens the booking form without reloading the page.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h3>A.S.T Enterprise</h3>
+        <p class="muted">All Services, One Platform.</p>
+        <div class="social" aria-label="Social media">
+          <a href="#" class="social-link" aria-label="Instagram">Instagram</a>
+          <a href="#" class="social-link" aria-label="Facebook">Facebook</a>
+          <a href="#" class="social-link" aria-label="Twitter">Twitter</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h3>About Us</h3>
+        <a href="#why" class="footer-link">Why A.S.T</a>
+        <a href="#faq" class="footer-link">FAQ</a>
+        <a href="#reviews" class="footer-link">Reviews</a>
+      </div>
+
+      <div class="footer-col">
+        <h3>Services</h3>
+        <a href="#categories" class="footer-link">All Services</a>
+        <a href="#popular" class="footer-link">Popular</a>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p class="muted">Email: support@astenterprise.example</p>
+        <p class="muted">Phone: +91 90000 00000</p>
+        <a href="#" class="footer-link">Privacy Policy</a>
+        <a href="#" class="footer-link">Terms & Conditions</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> A.S.T Enterprise. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
+
